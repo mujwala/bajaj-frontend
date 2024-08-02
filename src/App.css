@@ -1,38 +1,107 @@
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+textarea {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 500px; /* Adjusted max-width for smaller text area */
+  height: 150px; /* Set a fixed height to ensure consistency */
+  box-sizing: border-box;
+  resize: vertical; /* Allow resizing only vertically */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+select {
+  margin: 20px 0;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.selected-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.filter-item {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.clear-filter {
+  margin-left: 10px;
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+.numbers, .alphabets, .highest-alphabet {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.alphabets {
+  background-color: #f1f8e9;
+  border: 1px solid #c5e1a5;
+}
+
+.highest-alphabet {
+  background-color: #e3f2fd;
+  border: 1px solid #90caf9;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  textarea {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  select {
+    width: 90%;
+  }
+
+  .filter-item {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .numbers, .alphabets, .highest-alphabet {
+    margin: 5px;
+    padding: 8px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
   }
 }
